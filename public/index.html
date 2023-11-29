@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analisador Léxico</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .header {
+      background-color: #3498db;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    .left-panel,
+    .right-panel {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+
+    textarea {
+      width: 50%;
+      height: 20px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 51%;
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .painel {
+      border: 1px solid #ccc;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-x: auto;
+      width: 51%;
+    }
+
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+    }
+
+    html {
+    margin: 0;
+    height: 100%;
+    overflow-x: hidden
+    }
+
+    #table{
+      width: 100%;
+      border-collapse: collapse;
+     }
+
+    #table th{
+      border-bottom: 1px solid black;
+      font-weight: 500;
+    }
+
+    #table tr.green{
+      background-color: greenyellow;
+    }
+
+    #table tr.red{
+      background-color: rgb(255, 0, 0);
+    }
+
+    #table tr.current_step{
+      border: 2px solid #0046a8;
+    }
+
+    #table tr.end.green{
+      background-color: #00d62b;
+    }
+
+    #table tr.end.green td{
+      color: #000000;
+      font-weight: 900;
+    }
+
+    #table tr td{
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    #table tr th:first-child{
+      border-right: 1px solid black;
+      font-weight: 700;
+    }
+
+    #table tr td:first-child{
+      width: 10%;
+      border-right: 1px solid black;
+      font-weight: 700;
+    }
+
+    #table tr td.empty{
+      font-size: 12px;
+    }
+
+    #table tr td.step{
+      font-weight: 700;
+    }
+
+    .matrix {
+    border-collapse: collapse;
+    width: 100%;
+    }
+
+    .matrix th, .matrix td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .matrix th:first-child, .matrix td:first-child {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>Analisador Léxico</h1>
+    <a>Por: Paulo Augusto Lazzarotto</a>
+  </header>
+  <main class="main">
+    <div class="inputs">
+      <div class="left-panel">
+        <textarea id="inputText" placeholder="Digite seu texto aqui"></textarea>
+        <button id="insertWord">Adicionar palavra</button>
+      </div>
+  
+      <div class="left-panel">
+        <textarea id="textValidate" placeholder="Valide uma palavra"></textarea>
+      </div>
+
+      <div class="matrix">
+        <table id="table"></table>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <div id="palavrasAdicionadas" class="painel"></div>
+      <button id="removeWords">Limpar campo</button>
+    </div>
+  </main>
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
